@@ -42,6 +42,7 @@ import { FoyerModule } from './components/foyer/foyer.module';
 import { ApproutingblocModule } from './components/bloc/approutingbloc.module';
 import { BlocModule } from './components/bloc/bloc.module';
 import { HighlightDirective } from './directive/highlight.directive';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { HighlightDirective } from './directive/highlight.directive';
     NavBarComponent,
     HeaderComponent,
     HighlightDirective,
+    UserListComponent,
     
   ],
   imports: [
