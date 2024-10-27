@@ -1,0 +1,17 @@
+/* foyer-form.component.css */
+form {
+    max-height: 500px;
+    max-width: 800px; /* Choisissez la largeur maximale souhaitée */
+    margin: auto; /* Centrez le formulaire horizontalement */
+  }
+  
+  /* Ajoutez des styles supplémentaires si nécessaire */
+  label {
+    display: block; /* Affichez les étiquettes sur une nouvelle ligne */
+    margin-bottom: 10px; /* Ajoutez un espace en bas des étiquettes */
+  }
+  
+  input {
+    width: 100%; /* Faites en sorte que les champs de saisie occupent toute la largeur disponible */
+  }
+  

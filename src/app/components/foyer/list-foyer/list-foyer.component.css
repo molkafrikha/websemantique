@@ -1,0 +1,27 @@
+.table tbody tr.highlighted {
+    background-color: rgb(201, 138, 226);
+  }
+  /* app.component.css */
+.weather-card {
+  display: flexbox;
+  justify-content :left;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(116, 150, 29, 0.1);
+}
+
+.weather-info {
+  flex-grow: 1;
+}
+
+.temperature {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.weather-icon img {
+  width: 70px;
+  height: 70px;
+}

@@ -1,0 +1,22 @@
+<div>
+    <form #blocForm="ngForm" (ngSubmit)="ajouterBloc(bloc.foyer.idFoyer, blocForm)">
+      <!-- Ajoutez vos champs de formulaire ici -->
+      <div class="mb-4">
+      <label for="nomBloc">Nom du Bloc</label>
+      <input type="text" id="nomBloc" [(ngModel)]="bloc.nomBloc" name="nomBloc" required>
+      </div>
+      <div class="mb-4">
+      <label for="capaciteBloc">Capacité du Bloc</label>
+      <input type="number" id="capaciteBloc" [(ngModel)]="bloc.capaciteBloc" name="capaciteBloc" required>
+      </div>
+      <!-- Ajoutez un champ pour sélectionner le foyer -->
+      
+      <label for="idFoyer">Foyer</label>
+      <select id="idFoyer" [(ngModel)]="bloc.foyer.idFoyer" name="idFoyer" required>
+        <option *ngFor="let foyer of foyers" [value]="foyer.idFoyer">{{ foyer.nomFoyer }}</option>
+      </select>
+  
+      <button type="submit" class="btn btn-primary">Ajouter Bloc</button>
+    </form>
+  </div>
+  

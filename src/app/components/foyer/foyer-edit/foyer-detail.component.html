@@ -1,0 +1,28 @@
+<!-- foyer-form.component.html -->
+<form [formGroup]="foyerForm" (ngSubmit)="updateFoyer()">
+    <!-- Champs avec validation -->
+    <div class="mb-4">
+      <label for="nomFoyer">Nom Foyer</label>
+      <input type="text" id="nomFoyer" class="form-control" formControlName="nomFoyer" />
+      <div *ngIf="foyerForm.get('nomFoyer').hasError('required') && (foyerForm.get('nomFoyer').dirty || foyerForm.get('nomFoyer').touched)">
+        Le nom du foyer est requis.
+      </div>
+      <div *ngIf="foyerForm.get('nomFoyer').hasError('minlength') && (foyerForm.get('nomFoyer').dirty || foyerForm.get('nomFoyer').touched)">
+        Le nom du foyer doit avoir au moins une caractère.
+      </div>
+    </div>
+  
+    <div class="mb-4">
+      <label for="capaciteFoyer">Capacité</label>
+      <input type="number" id="capaciteFoyer" class="form-control" formControlName="capaciteFoyer" />
+      <div *ngIf="foyerForm.get('capaciteFoyer').hasError('required') && (foyerForm.get('capaciteFoyer').dirty || foyerForm.get('capaciteFoyer').touched)">
+        La capacité est requise.
+      </div>
+    </div>
+  
+    <!-- Bouton de soumission -->
+    <button type="button" class="btn btn-primary btn-block mb-4" (click)="updateFoyer()" [disabled]="foyerForm.invalid">
+      Modifier
+    </button>
+  </form>
+  

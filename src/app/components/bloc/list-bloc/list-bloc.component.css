@@ -1,0 +1,48 @@
+/* app.component.css */
+.weather-card {
+    display: flexbox;
+    justify-content :left;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px rgba(116, 150, 29, 0.1);
+  }
+  
+  .weather-info {
+    flex-grow: 1;
+  }
+  
+  .temperature {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .weather-icon img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cartes-poker {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .carte-poker {
+    width: 50px;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .carte-poker:hover {
+    background-color: #f0f0f0;
+  }
+  

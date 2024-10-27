@@ -1,0 +1,58 @@
+
+<div>
+  <h2>Conditions Météorologiques</h2>
+  <div class="weather-card">
+    <div class="weather-info">
+      <h3>{{ weatherData.name }}</h3>
+      <p class="temperature">{{ weatherData.main.temp }}°C</p>
+      <p>Humidité : {{ weatherData.main.humidity }}%</p>
+      <p>Conditions : {{ weatherData.weather[0].description }}</p>
+    </div>
+    <div class="weather-icon">
+      <img [src]="'assets/img/meteo.png'" alt="Weather Icon">
+    </div>
+  </div>
+</div>
+<div>
+  <div class="form-outline" data-mdb-input-init>
+    <input id="search-input" type="search" [(ngModel)]="searchCapacity" class="form-control" />
+    <label class="form-label" for="search-input">Capacité maximale</label>
+  </div>
+  <div *ngIf="searchCapacity !== undefined">
+    Recherche de foyers avec une capacité inférieure à {{ searchCapacity }}
+  </div>
+  <button id="search-button" type="button" class="btn btn-primary" (click)="search()">
+    <i class="fas fa-search"></i>
+  </button>
+<div class="d-flex justify-content-end"> <!-- Ajout de la classe pour aligner à droite -->
+    <button type="button" class="btn btn-info" mdbRipple routerLink="/addFoyer">Ajouter Foyer</button>
+  </div>
+  <h2>Liste des Foyers</h2>
+<!-- list-foyer.component.html -->
+<div *ngIf="foyers && foyers.length > 0; else noFoyers">
+  
+  <table class="table align-middle mb-0 bg-white">
+    
+    <thead class="bg-light">
+      <tr>
+        <th>Nom</th>
+        <th>Capacité</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let foyer of foyers" [appHighlightCapacity]="foyer.capaciteFoyer" [class.highlighted]="foyer.capaciteFoyer > 500">
+        <td>{{ foyer.nomFoyer }}</td>
+        <td>{{ foyer.capaciteFoyer }}</td>
+        <td>
+          <button type="button" class="btn btn-secondary" [routerLink]="['/editFoyer', foyer.idFoyer]">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="deleteFoyer(foyer); notifyParentOnFoyerDelete()">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noFoyers>
+  <p>Aucun foyer n'a été trouvé.</p>
+</ng-template>
+</div>
