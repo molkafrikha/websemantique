@@ -1,0 +1,11 @@
+<div *ngIf="users && users.length">
+    <h2>User List</h2>
+    <ul>
+        <li *ngFor="let user of users">
+            {{ user.name }} - {{ user.email }} - {{ user.age }}
+        </li>
+    </ul>
+</div>
+<div *ngIf="!users || users.length === 0">
+    <p>No users available.</p>
+</div>
