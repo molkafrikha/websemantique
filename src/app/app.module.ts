@@ -42,8 +42,13 @@ import { FoyerModule } from './components/foyer/foyer.module';
 import { ApproutingblocModule } from './components/bloc/approutingbloc.module';
 import { BlocModule } from './components/bloc/bloc.module';
 import { HighlightDirective } from './directive/highlight.directive';
+
+import { AdminsComponent } from './components/admins/admins/admins.component';
+import { PlansComponent } from './components/plans/plans/plans.component';
+
 import { UserListComponent } from './components/user-list/user-list.component';
 import { HealthActivityComponent } from './components/health-activity/health-activity.component';
+
 
 @NgModule({
   declarations: [
@@ -53,8 +58,13 @@ import { HealthActivityComponent } from './components/health-activity/health-act
     NavBarComponent,
     HeaderComponent,
     HighlightDirective,
+
+    AdminsComponent,
+    PlansComponent,
+
     UserListComponent,
     HealthActivityComponent,
+
     
   ],
   imports: [

@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <h2>Liste des Plans pour l'Expert</h2>
+
+    <table class="table table-striped table-bordered mt-3" *ngIf="plans.length">
+      <thead class="thead-dark">
+        <tr>
+          <th>Type de Régime</th>
+          <th>Intensité</th>
+          <th>Date de Début</th>
+          <th>Date de Fin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plan of plans">
+          <td>{{ plan.dietPlanType }}</td>
+          <td>{{ plan.intensity }}</td>
+          <td>{{ plan.startDate | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ plan.endDate | date: 'dd/MM/yyyy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!plans.length" class="alert alert-warning mt-3">
+      Aucun plan trouvé pour cet expert.
+    </div>
+</div>
