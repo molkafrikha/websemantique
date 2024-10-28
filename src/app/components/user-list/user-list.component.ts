@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import {Users} from "../../models/users";
 
 @Component({
   selector: 'app-user-list',
@@ -7,17 +8,23 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  users: any[] = [];
+  users: Users[] = [];
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe(
-      (data) => {
-        this.users = data;
+      (data: any) => { // Keep using 'any' to capture the response type
+
+
+        if (data.entities && Array.isArray(data.entities)) {
+          this.users = data.entities;
+        } else {
+          console.error('Entities array is missing or not an array:', data);
+        }
       },
       (error) => {
-        console.error('Error fetching users:', error);
+        console.error('Erreur lors de la récupération des Utilisateurs :', error);
       }
     );
   }

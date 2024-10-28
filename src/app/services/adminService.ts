@@ -1,25 +1,20 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Users } from '../models/users';
-
 
 @Injectable({
-    providedIn: 'root',
-  })
+  providedIn: 'root'
+})
+export class AdminService {
+  private apiUrl = 'http://localhost:8081';  // Replace with the correct backend URL
 
-  export class AdminService {
-    private apiUrl = 'http://localhost:8081';  // Remplacez par l'URL correcte de votre backend
-  
-    constructor(private http: HttpClient) {}
-  
-    getAdmins(): Observable<any> {
-        return this.http.get<any>(`${this.apiUrl}/getAllAdmins`);
-      }
-      
-  
-  
-  
-    
+  constructor(private http: HttpClient) {}
+
+  getAdmins(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<any>(`${this.apiUrl}/getAllAdmins`, { headers });
   }
-   
+}
