@@ -1,0 +1,57 @@
+<!-- src/app/components/health-activity/health-activity.component.html -->
+<div class="health-activities-container">
+  <h2>Health Activities</h2>
+  <table class="health-activities-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Duration (minutes)</th>
+        <th>Calories Burned</th>
+        <th>Steps Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let activity of healthActivities">
+        <td>{{ activity.type }}</td>
+        <td>{{ activity.duration }}</td>
+        <td>{{ activity.caloriesBurned }}</td>
+        <td>{{ activity.stepsCount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+.health-activities-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.health-activities-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.health-activities-table th,
+.health-activities-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.health-activities-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.health-activities-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.health-activities-table tr:hover {
+  background-color: #ddd;
+}
+</style>

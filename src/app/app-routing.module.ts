@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import{HeaderComponent} from 'src/app/components/header/header/header.component';
 import { FoyerFormComponent } from './components/foyer/foyer-form/foyer-form.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { HealthActivityComponent } from './components/health-activity/health-activity.component';
 
 const routes: Routes = [
  
@@ -14,6 +15,8 @@ const routes: Routes = [
  },
  { path: '', component: HeaderComponent },
    { path: 'users', component: UserListComponent },
+   { path: 'health-activity', component: HealthActivityComponent },
+
 ];
 
 @NgModule({

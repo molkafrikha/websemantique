@@ -43,6 +43,7 @@ import { ApproutingblocModule } from './components/bloc/approutingbloc.module';
 import { BlocModule } from './components/bloc/bloc.module';
 import { HighlightDirective } from './directive/highlight.directive';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { HealthActivityComponent } from './components/health-activity/health-activity.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
     HeaderComponent,
     HighlightDirective,
     UserListComponent,
+    HealthActivityComponent,
     
   ],
   imports: [
